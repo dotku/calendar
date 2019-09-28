@@ -1,0 +1,29 @@
+<body>
+<iframe 
+  src="https://calendar.google.com/calendar/embed?src=weijingjaylin%40gmail.com&ctz=America%2FLos_Angeles" 
+  style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</body>
+<script>
+let search = {};
+let iframeSrc = "https://calendar.google.com/calendar/embed?";
+let ifNewURL = false;
+window
+  .location
+  .search
+  .substring(1)
+  .split("&")
+  .forEach(s => {
+    let parts = s.split("=");
+    search[parts[0]] = parts[1];
+  });
+
+if (search.src || search.ctz) {
+  for (let key in search) {
+    iframeSrc += `${key}=${search[key]}`;
+  }
+  ifNewURL = true;
+}
+
+if (ifNewURL) document.querySelector("iframe").src = iframeSrc;
+console.log(document.querySelector("iframe").src)
+</script>
