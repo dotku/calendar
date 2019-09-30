@@ -54,7 +54,7 @@
 
     if (search.src || search.ctz) {
       for (let key in search) {
-        iframeSrc += `${key}=${search[key]}`;
+        iframeSrc += `${key}=${search[key]}&`;
       }
       ifNewURL = true;
     }
