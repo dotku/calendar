@@ -22,7 +22,12 @@
   <body>
     <iframe 
       src="https://calendar.google.com/calendar/embed?src=weijingjaylin%40gmail.com&ctz=America%2FLos_Angeles" 
-      style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      style="border: 0" 
+      width="800" 
+      height="600" 
+      frameborder="0" 
+      scrolling="no" 
+    />
     <div class="container-main center">
       <p>The purpose of this calendar is used for me to share my avalibility.</p>
       <p>
@@ -30,7 +35,8 @@
         eg. https://dotku.github.io/calendar/?src=YOUR_EMAIL_ADDRESS_HERE
       </p>
       <p>
-        For advanced features, eg public booking, I would suggest checkout https://calendly.com.
+        For advanced features, eg public booking, I would suggest checkout 
+        <a href="https://calendly.com">https://calendly.com/</a>.
       </p>
       <p>
         Thanks,<br/>
@@ -60,6 +66,5 @@
     }
 
     if (ifNewURL) document.querySelector("iframe").src = iframeSrc;
-    console.log(document.querySelector("iframe").src)
   </script>
 </html>
