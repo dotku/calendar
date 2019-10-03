@@ -70,7 +70,9 @@
         ...originSearch,
         ...search
       };
-      iframeSrc += search.map(item => `${key}=${search[key]}`).join("&");
+      for (let key in search) {
+        iframeSrc += `${key}=${search[key]}&`);
+      }
       ifNewURL = true;
     }
 
