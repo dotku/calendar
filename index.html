@@ -13,7 +13,7 @@
       }
       .container-center {
         display: flex;
-        align-item: center;
+        align-items: center;
       }
       .content {
         max-width: 800px;
@@ -48,6 +48,10 @@
     </div>
   </body>
   <script>
+    let originSearch = {
+      src: "weijingjaylin@gmail.com",
+      ctz: "America/Los_Angeles"
+    }
     let search = {};
     let iframeSrc = "https://calendar.google.com/calendar/embed?";
     let ifNewURL = false;
@@ -62,9 +66,11 @@
       });
 
     if (Object.keys(search).every(item => ["src", "ctz", "mode"].includes(item))) {
-      for (let key in search) {
-        iframeSrc += `${key}=${search[key]}&`;
-      }
+      search = {
+        ...originSearch,
+        ...search
+      };
+      iframeSrc += search.map(item => `${key}=${search[key]}`).join("&");
       ifNewURL = true;
     }
 
