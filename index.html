@@ -12,7 +12,8 @@
       }
       .container-main {
         display: block;
-        width: 800px;
+        max-width: 800px;
+        margin: 25px;
       }
       .center {
         margin: auto;
@@ -58,7 +59,7 @@
         search[parts[0]] = parts[1];
       });
 
-    if (search.src || search.ctz || search.mode) {
+    if (Object.keys(search).every(item => ["src", "ctz", "mode"].includes(item))) {
       for (let key in search) {
         iframeSrc += `${key}=${search[key]}&`;
       }
