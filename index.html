@@ -58,7 +58,7 @@
         search[parts[0]] = parts[1];
       });
 
-    if (search.src || search.ctz) {
+    if (search.src || search.ctz || search.mode) {
       for (let key in search) {
         iframeSrc += `${key}=${search[key]}&`;
       }
