@@ -61,6 +61,9 @@
           eg. https://dotku.github.io/calendar/?src=YOUR_EMAIL_ADDRESS_HERE
         </p>
         <p>
+          <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=amF5LmxpbkB4ZXJvLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=d2VpamluZ2pheWxpbkBnbWFpbC5jb20&amp;color=%230083c6&amp;color=%2333B679&amp;color=%230B8043&amp;color=%239E69AF&amp;showTitle=1" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </p>
+        <p>
           For advanced features, eg public booking, I would suggest checkout 
           <a href="https://calendly.com">https://calendly.com/</a>.
         </p>
@@ -76,6 +79,24 @@
       src: "weijingjaylin@gmail.com",
       ctz: "America/Los_Angeles"
     }
+    // @ref: https://stackoverflow.com/questions/2269192/use-a-custom-url-to-get-a-customized-printable-version-of-google-calendar
+    let argKeys = [
+      "mode",
+      "wkst",
+      "hl"
+      "pgsz",
+      "dates",
+      "src",
+      "ctz",
+      "src",
+      "pfs",
+      "po"
+      "psdec",
+      "pbw",
+      "pjs",
+      "rand",
+      "pda",
+    ];
     let search = {};
     let iframeSrc = "https://calendar.google.com/calendar/embed?";
     let ifNewURL = false;
@@ -89,7 +110,7 @@
         search[parts[0]] = parts[1];
       });
 
-    if (Object.keys(search).every(item => ["src", "ctz", "mode"].includes(item))) {
+    if (Object.keys(search).every(item => argKeys.includes(item))) {
       search = {
         ...originSearch,
         ...search
