@@ -33,6 +33,6 @@ iframe {
 
 @media only screen and (max-width: 450px) {
   .calendly-inline-widget {
-    height: 480px;
+    height: 480px !important;
   }
 }
