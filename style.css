@@ -30,3 +30,9 @@ iframe {
 .content {
   padding: 20px;
 }
+
+@media only screen and (max-width: 450px) {
+  .calendly-inline-widget {
+    width: 480px;
+  }
+}
