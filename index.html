@@ -9,7 +9,11 @@
       }
       iframe {
         display: block;
+      }
+      .container-overflow {
+        maxwidth: 800px;
         margin: 50px auto;
+        overflow-x: auto;
       }
       .container-center {
         display: flex;
@@ -21,14 +25,16 @@
     </style>
   </head>
   <body>
-    <iframe 
-      src="https://calendar.google.com/calendar/embed?src=weijingjaylin%40gmail.com&ctz=America%2FLos_Angeles" 
-      style="border: 0" 
-      width="800" 
-      height="600" 
-      frameborder="0" 
-      scrolling="no" 
-    ></iframe>
+    <div class="container-olverflow">
+      <iframe 
+        src="https://calendar.google.com/calendar/embed?src=weijingjaylin%40gmail.com&ctz=America%2FLos_Angeles" 
+        style="border: 0" 
+        width="800" 
+        height="600" 
+        frameborder="0" 
+        scrolling="no" 
+      ></iframe>
+    </div>
     <div class="container-center">
       <div class="content">
         <p>The purpose of this calendar is used for me to share my avalibility.</p>
